@@ -11,7 +11,7 @@ RUN apt update && apt install -y npm curl wget nano && npm install -g n && npm c
 # ==========================================================
 
 # Copy the default SSL configuration file to a temporary location
-COPY ./default-ssl.conf /tmp/
+COPY /etc/apache2/sites-available/default-ssl.conf /tmp/
 
 # Replace the DocumentRoot in the default-ssl.conf file
 RUN sed -i 's|/var/www/html|/var/www/html/docroot|g' /tmp/default-ssl.conf
