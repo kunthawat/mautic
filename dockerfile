@@ -22,7 +22,7 @@ RUN apt update && apt install -y npm curl wget nano && npm install -g n && npm c
 # ==========================================================
 
 # Control your timezone
-ENV TZ="Asia/Bangkok"
+ENV TZ="UTC"
 
 # sets GID and UID
 ENV PUID=9999
