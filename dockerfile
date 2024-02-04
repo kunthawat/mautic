@@ -34,6 +34,7 @@ ENV WEBHOME="/var/www/html"
 
 
 # Add cron jobs
+USER root
 RUN echo "# Segment cron job" >> /etc/crontab && \
     echo "0,15,30,45 * * * * php /var/www/html/bin/console mautic:segments:update --batch-limit=300" >> /etc/crontab && \
     echo "# Campaign cron jobs" >> /etc/crontab && \
