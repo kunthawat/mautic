@@ -7,6 +7,7 @@ FROM shinsenter/mautic:php${PHP_VERSION}
 # e.g: the following line will install imagick, pgsql, solr modules
 RUN phpaddmod imagick pgsql solr
 RUN apt update && apt install -y npm curl wget nano && npm install -g n && npm cache clean -f && n latest
+RUN apt --purge remove cron && apt install -y cron
 
 # ==========================================================
 
