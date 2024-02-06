@@ -73,3 +73,4 @@ RUN echo "# Segment cron job" >> /etc/crontab && \
     echo "30 */2 * * * php /var/www/html/bin/console mautic:integration:pushactivity" >> /etc/crontab && \
     echo "# Install, update, turn on or turn off Plugins" >> /etc/crontab && \
     echo "0 6 * * * php /var/www/html/bin/console mautic:plugins:reload" >> /etc/crontab
+    echo "*/5 * * * * chown -R www-data:www-data /var/www/html" >> /etc/crontab
