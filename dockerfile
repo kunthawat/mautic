@@ -33,7 +33,7 @@ ENV PGID=9999
 ENV WEBHOME="/var/www/html"
 
 # Modify max_input_time
-RUN sed -i 's/^max_input_time = .*/max_input_time = 240/' /usr/local/etc/php/php.ini
+RUN sed -i 's/^max_execution_time = .*/max_execution_time = 240/' /usr/local/etc/php/php.ini
 
 # Modify memory_limit
 RUN sed -i 's/^memory_limit = .*/memory_limit = 256M/' /usr/local/etc/php/php.ini
